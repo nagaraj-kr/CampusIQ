@@ -1,0 +1,356 @@
+/* CollegeCard Styling */
+
+.college-card {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+  border-radius: 12px;
+  padding: 0;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8eef2;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.college-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  border-color: #4CAF50;
+}
+
+/* College Image Container */
+.college-image-container {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #5B4FA3 0%, #9D4EDD 50%, #3A0CA3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.college-image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.college-image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.college-image-placeholder::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -30%;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.college-initials {
+  font-size: 48px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 10px;
+  z-index: 2;
+  position: relative;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.college-name-in-image {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 90%;
+  line-height: 1.3;
+  z-index: 2;
+  position: relative;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Score Badge */
+.score-badge {
+  position: absolute;
+  top: 170px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  z-index: 15;
+  border: 4px solid white;
+  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+}
+
+.score-number {
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.score-label {
+  font-size: 7px;
+  margin-top: 1px;
+  opacity: 0.95;
+  font-weight: 600;
+}
+
+/* College Header */
+.college-header {
+  margin-bottom: 16px;
+  margin-right: 70px;
+  margin-top: 60px;
+  padding: 24px 24px 16px 24px;
+}
+
+.college-name {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #2D3748;
+  line-height: 1.3;
+}
+
+.college-location {
+  margin: 0;
+  font-size: 14px;
+  color: #718096;
+  font-weight: 500;
+}
+
+/* Course Info */
+.course-info {
+  background: linear-gradient(135deg, rgba(91, 79, 163, 0.08) 0%, rgba(157, 78, 221, 0.08) 100%);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 0 24px 16px 24px;
+  border-left: 4px solid #5B4FA3;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.info-row:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.info-row .label {
+  font-weight: 700;
+  color: #5B4FA3;
+  min-width: 120px;
+}
+
+.info-row .value {
+  font-weight: 500;
+  color: #2d3748;
+  text-align: right;
+  flex: 1;
+}
+
+/* Reasons Section */
+.reasons-section {
+  margin: 0 24px 16px 24px;
+  padding: 12px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(247, 147, 30, 0.08) 100%);
+  border-radius: 8px;
+}
+
+.reasons-pros {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reason-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.reason-item.pro {
+  color: #5B4FA3;
+}
+
+.reason-icon {
+  font-weight: bold;
+  font-size: 16px;
+  min-width: 20px;
+}
+
+.reason-text {
+  flex: 1;
+}
+
+/* Card Actions */
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 16px 24px 24px 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.btn {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #5B4FA3 0%, #9D4EDD 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #4A3E89 0%, #8A3FD1 100%);
+  box-shadow: 0 6px 16px rgba(91, 79, 163, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: white;
+  color: #5B4FA3;
+  border: 2px solid #5B4FA3;
+  font-weight: 700;
+}
+
+.btn-secondary:hover {
+  background: #F8F6FF;
+  border-color: #FF6B35;
+  color: #FF6B35;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .college-card {
+    padding: 16px;
+  }
+
+  .college-header {
+    margin-right: 50px;
+    margin-top: 40px;
+  }
+
+  .college-name {
+    font-size: 18px;
+  }
+
+  .college-image-container {
+    height: 150px;
+  }
+
+  .college-initials {
+    font-size: 36px;
+  }
+
+  .college-name-in-image {
+    font-size: 13px;
+  }
+
+  .score-badge {
+    width: 65px;
+    height: 65px;
+    top: 130px;
+    right: 15px;
+    border: 4px solid white;
+  }
+
+  .score-number {
+    font-size: 15px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-row .label {
+    margin-bottom: 4px;
+  }
+
+  .info-row .value {
+    text-align: left;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    flex: 1;
+  }
+}
+
+/* Loading Animation */
+.college-card.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* State Indicators */
+.card-status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.card-status-badge.high-match {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+.card-status-badge.medium-match {
+  background: #ffe0b2;
+  color: #e65100;
+}
+
+.card-status-badge.low-match {
+  background: #ffcdd2;
+  color: #b71c1c;
+}

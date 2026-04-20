@@ -1,0 +1,78 @@
+.input-bar-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.input-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 10px 10px 10px 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
+
+.input-bar:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(108,142,245,0.1);
+}
+
+.input-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.input-field {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  color: var(--text-primary);
+  resize: none;
+  line-height: 1.6;
+  max-height: 160px;
+  overflow-y: auto;
+  padding: 2px 0;
+}
+
+.input-field::placeholder {
+  color: var(--text-muted);
+}
+
+.input-field::-webkit-scrollbar { width: 3px; }
+.input-field::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 2px; }
+
+.send-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: none;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.send-btn:disabled {
+  cursor: default;
+}
+
+.send-active {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.02);
+}
+
+.send-active:hover {
+  background: #5a7ce8;
+}
