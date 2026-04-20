@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'students',
     'colleges',
     'recommendation',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 # CORS Configuration
@@ -64,6 +66,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5174",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://nagarajkr2002.pythonanywhere.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
