@@ -34,7 +34,10 @@ export function CollegeCard({ college, onViewDetails }) {
 
       {/* College Header */}
       <div className="college-header">
-        <h3 className="college-name">{college.college_name}</h3>
+        <div className="header-top">
+          <h3 className="college-name">{college.college_name}</h3>
+          <div className="score-display">{college.score}%</div>
+        </div>
         <p className="college-location">
           📍 {college.city}, {college.state}
         </p>

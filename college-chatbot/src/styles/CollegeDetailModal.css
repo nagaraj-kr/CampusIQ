@@ -27,12 +27,13 @@
 .modal-content {
   position: relative;
   background: white;
-  border-radius: 12px;
-  max-width: 700px;
-  max-height: 90vh;
+  border-radius: clamp(10px, 2vw, 14px);
+  max-width: clamp(90vw, 95vw, 900px);
+  max-height: clamp(80vh, 90vh, 95vh);
   overflow-y: auto;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   animation: slideUp 0.3s ease;
+  margin: clamp(12px, 3vw, 20px);
 }
 
 @keyframes slideUp {
@@ -48,19 +49,23 @@
 
 /* Close Button */
 .modal-close {
-  position: sticky;
-  top: 16px;
-  right: 16px;
-  float: right;
+  position: absolute;
+  top: clamp(12px, 2vw, 16px);
+  right: clamp(12px, 2vw, 16px);
   background: white;
   border: 1px solid #e8eef2;
-  width: 36px;
-  height: 36px;
+  width: clamp(32px, 6vw, 40px);
+  height: clamp(32px, 6vw, 40px);
   border-radius: 50%;
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 22px);
   cursor: pointer;
   transition: all 0.2s ease;
   z-index: 10;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-close:hover {
@@ -71,38 +76,38 @@
 
 /* Modal Header */
 .modal-header {
-  padding: 24px 24px 16px;
+  padding: clamp(18px, 3vw, 28px) clamp(18px, 3vw, 28px) clamp(12px, 2vw, 18px);
   border-bottom: 1px solid #e8eef2;
   background: linear-gradient(135deg, #f5f7fa 0%, #e8eef2 100%);
 }
 
 .modal-header h2 {
-  margin: 0 0 8px 0;
-  font-size: 24px;
+  margin: 0 0 clamp(6px, 1.5vw, 10px) 0;
+  font-size: clamp(20px, 4vw, 28px);
   font-weight: 700;
   color: #1a202c;
 }
 
 .college-meta {
   margin: 0;
-  font-size: 14px;
+  font-size: clamp(12px, 2.5vw, 14px);
   color: #718096;
   font-weight: 500;
 }
 
 /* Modal Body */
 .modal-body {
-  padding: 24px;
+  padding: clamp(18px, 3vw, 28px);
   max-height: calc(90vh - 200px);
   overflow-y: auto;
 }
 
 /* Sections */
 .detail-section {
-  margin-bottom: 24px;
-  padding: 16px;
+  margin-bottom: clamp(18px, 3vw, 28px);
+  padding: clamp(14px, 2vw, 20px);
   background: #f7fafc;
-  border-radius: 8px;
+  border-radius: clamp(8px, 1.5vw, 10px);
   border-left: 4px solid #4CAF50;
 }
 
@@ -111,8 +116,8 @@
 }
 
 .detail-section h3 {
-  margin: 0 0 12px 0;
-  font-size: 16px;
+  margin: 0 0 clamp(10px, 2vw, 14px) 0;
+  font-size: clamp(14px, 3vw, 18px);
   font-weight: 700;
   color: #1a202c;
 }
@@ -120,25 +125,26 @@
 /* Info Grid */
 .info-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(140px, 30vw, 200px), 1fr));
+  gap: clamp(10px, 2vw, 16px);
 }
 
 .info-item {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: clamp(2px, 0.5vw, 4px);
 }
 
 .info-label {
-  font-size: 12px;
+  font-size: clamp(10px, 2.2vw, 12px);
   font-weight: 600;
   color: #718096;
   text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
 
 .info-value {
-  font-size: 14px;
+  font-size: clamp(13px, 2.5vw, 15px);
   font-weight: 500;
   color: #2d3748;
 }
@@ -147,16 +153,18 @@
 .detail-link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px;
-  margin: 8px 0;
+  gap: clamp(6px, 1.5vw, 10px);
+  padding: clamp(10px, 2vw, 14px);
+  margin: clamp(8px, 1.5vw, 10px) 0;
   background: white;
   border: 1px solid #e8eef2;
-  border-radius: 6px;
+  border-radius: clamp(6px, 1.5vw, 8px);
   color: #4CAF50;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.2s ease;
+  font-size: clamp(12px, 2.5vw, 14px);
+  min-height: 44px;
 }
 
 .detail-link:hover {
@@ -169,14 +177,14 @@
 .courses-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: clamp(10px, 2vw, 14px);
 }
 
 .course-item {
   background: white;
   border: 1px solid #e8eef2;
-  border-radius: 8px;
-  padding: 12px;
+  border-radius: clamp(8px, 1.5vw, 10px);
+  padding: clamp(12px, 2vw, 16px);
   transition: all 0.2s ease;
 }
 
@@ -189,33 +197,74 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 8px;
+  margin-bottom: clamp(8px, 1.5vw, 10px);
+  gap: clamp(8px, 2vw, 12px);
+  flex-wrap: wrap;
 }
 
 .course-header h4 {
   margin: 0;
-  font-size: 14px;
+  font-size: clamp(13px, 2.5vw, 15px);
   font-weight: 600;
   color: #1a202c;
   flex: 1;
+  min-width: 150px;
 }
 
 .stream-badge {
   display: inline-block;
-  padding: 4px 10px;
+  padding: clamp(3px, 0.8vw, 5px) clamp(8px, 1.5vw, 12px);
   background: #c8e6c9;
   color: #1b5e20;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: clamp(10px, 2.2vw, 12px);
   font-weight: 600;
   white-space: nowrap;
-  margin-left: 8px;
 }
 
 .course-details {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(120px, 25vw, 160px), 1fr));
+  gap: clamp(10px, 2vw, 14px);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 0;
+  }
+  
+  .modal-content {
+    margin: 0;
+    max-width: 100%;
+    border-radius: clamp(12px, 3vw, 16px) clamp(12px, 3vw, 16px) 0 0;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .course-header {
+    flex-direction: column;
+  }
+  
+  .course-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop Optimizations */
+@media (min-width: 1025px) {
+  .info-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .detail-inline {

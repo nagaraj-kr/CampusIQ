@@ -1,21 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg: #0a0b0f;
-  --surface: #111318;
-  --surface-2: #1a1d26;
-  --border: rgba(255,255,255,0.07);
-  --border-hover: rgba(255,255,255,0.14);
-  --text-primary: #f0f1f5;
-  --text-secondary: #8b8fa8;
-  --text-muted: #555870;
-  --accent: #6c8ef5;
-  --accent-soft: rgba(108,142,245,0.12);
-  --accent-2: #a78bfa;
-  --green: #4ade80;
-  --radius: 14px;
+  /* Premium Color Palette */
+  --bg: #0f1117;
+  --bg-secondary: #1a1e2e;
+  --surface: #161b22;
+  --surface-2: #21262d;
+  --surface-hover: #262c36;
+  
+  /* Professional Accent Colors */
+  --accent: #3b82f6;
+  --accent-light: #60a5fa;
+  --accent-dark: #1e40af;
+  --accent-soft: rgba(59, 130, 246, 0.1);
+  
+  /* Secondary Gradient */
+  --accent-2: #8b5cf6;
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --gradient-secondary: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  
+  /* Text Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-muted: #64748b;
+  
+  /* Borders & UI */
+  --border: rgba(203, 213, 225, 0.12);
+  --border-hover: rgba(203, 213, 225, 0.2);
+  --border-active: rgba(59, 130, 246, 0.3);
+  
+  /* Status Colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+  
+  /* Semantic */
+  --green: #10b981;
+  --radius: 12px;
+  --radius-lg: 16px;
   --radius-sm: 8px;
-  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+  
+  /* Shadows - Professional */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.24);
+  
+  /* Responsive Typography - Professional Hierarchy */
+  --font-size-xs: clamp(11px, 2.2vw, 12px);
+  --font-size-sm: clamp(12px, 2.5vw, 13px);
+  --font-size-base: clamp(13px, 2.8vw, 15px);
+  --font-size-lg: clamp(15px, 3.2vw, 17px);
+  --font-size-xl: clamp(18px, 3.8vw, 21px);
+  --font-size-2xl: clamp(22px, 4.5vw, 28px);
+  --font-size-3xl: clamp(28px, 5.5vw, 36px);
+  
+  /* Font Weights */
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  
+  /* Responsive Spacing */
+  --spacing-xs: clamp(4px, 0.8vw, 6px);
+  --spacing-sm: clamp(8px, 1.2vw, 12px);
+  --spacing-md: clamp(12px, 1.8vw, 16px);
+  --spacing-lg: clamp(16px, 2.5vw, 24px);
+  --spacing-xl: clamp(20px, 3.5vw, 32px);
+  --spacing-2xl: clamp(24px, 4.5vw, 48px);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease-in-out;
+  --transition: 0.25s ease-in-out;
+  --transition-slow: 0.35s ease-in-out;
 }
 
 *, *::before, *::after {
@@ -60,8 +120,8 @@ body {
   top: -200px;
   left: 50%;
   transform: translateX(-50%);
-  width: 700px;
-  height: 500px;
+  width: clamp(400px, 90vw, 700px);
+  height: clamp(300px, 60vh, 500px);
   background: radial-gradient(ellipse, rgba(108,142,245,0.08) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
@@ -85,8 +145,38 @@ body {
 .input-zone {
   position: relative;
   z-index: 2;
-  padding: 12px 16px 16px;
+  padding: clamp(8px, 1.5vw, 10px) clamp(12px, 4vw, 24px) clamp(14px, 3.5vw, 18px);
   background: linear-gradient(to top, var(--bg) 80%, transparent);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+  .main {
+    scroll-behavior: auto;
+  }
+  
+  .input-zone {
+    padding: 8px 12px 14px;
+  }
+  
+  .input-hint {
+    font-size: 10px;
+    margin-top: 6px;
+  }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .input-zone {
+    padding: 10px 20px 16px;
+  }
+}
+
+/* Desktop Optimizations */
+@media (min-width: 1025px) {
+  .input-zone {
+    padding: 10px 24px 18px;
+  }
 }
 
 .input-hint {

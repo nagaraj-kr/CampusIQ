@@ -1,38 +1,50 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
-  height: 60px;
-  background: rgba(10,11,15,0.85);
-  backdrop-filter: blur(16px);
+  justify-content: flex-start;
+  padding: clamp(14px, 2.8vw, 22px) clamp(16px, 3vw, 32px);
+  height: auto;
+  min-height: clamp(56px, 10vh, 72px);
+  background: rgba(15, 17, 23, 0.95);
+  backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   position: relative;
   z-index: 10;
   flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
 
 .header-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(8px, 1.5vw, 14px);
+  flex: 0 0 auto;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .logo-icon {
-  font-size: 22px;
+  font-size: 24px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .logo-text {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.5px;
+  font-size: clamp(17px, 4.2vw, 22px);
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.6px;
 }
 
 .logo-accent {
@@ -41,23 +53,41 @@
 
 .logo-tagline {
   font-size: 11px;
-  color: var(--text-muted);
+  color: var(--text-tertiary);
   font-family: 'JetBrains Mono', monospace;
-  padding: 3px 8px;
+  padding: 4px 10px;
   border: 1px solid var(--border);
   border-radius: 20px;
-  background: var(--surface);
+  background: var(--surface-hover);
+  display: none;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .logo-tagline {
+    display: inline-block;
+  }
 }
 
 .header-right {
   display: flex;
   align-items: center;
+  margin-left: auto;
 }
 
 .auth-btns {
   display: flex;
-  gap: 8px;
+  gap: clamp(6px, 1.5vw, 12px);
   align-items: center;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 480px) {
+  .auth-btns {
+    gap: 6px;
+  }
 }
 
 .btn-ghost {
@@ -65,16 +95,26 @@
   border: none;
   color: var(--text-secondary);
   font-family: 'Sora', sans-serif;
-  font-size: 14px;
+  font-size: clamp(12px, 2.5vw, 15px);
   font-weight: 500;
   cursor: pointer;
-  padding: 7px 14px;
+  padding: clamp(6px, 1.5vw, 10px) clamp(10px, 2vw, 16px);
   border-radius: var(--radius-sm);
   transition: all 0.2s;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 .btn-ghost:hover {
   color: var(--text-primary);
   background: var(--surface);
+}
+
+@media (max-width: 480px) {
+  .btn-ghost {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
 }
 
 .btn-primary {
@@ -82,32 +122,43 @@
   border: none;
   color: #fff;
   font-family: 'Sora', sans-serif;
-  font-size: 14px;
+  font-size: clamp(12px, 2.5vw, 15px);
   font-weight: 600;
   cursor: pointer;
-  padding: 7px 16px;
+  padding: clamp(8px, 1.5vw, 12px) clamp(14px, 2vw, 20px);
   border-radius: var(--radius-sm);
   transition: all 0.2s;
   letter-spacing: -0.2px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 }
 .btn-primary:hover {
   background: #5a7ce8;
   transform: translateY(-1px);
 }
 
+@media (max-width: 480px) {
+  .btn-primary {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
 .user-pill {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: clamp(6px, 1.5vw, 10px);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 30px;
-  padding: 5px 14px 5px 6px;
+  padding: clamp(4px, 1vw, 6px) clamp(10px, 2vw, 16px) clamp(4px, 1vw, 6px) clamp(4px, 1vw, 6px);
 }
 
 .user-avatar {
-  width: 28px;
-  height: 28px;
+  width: clamp(28px, 5vw, 36px);
+  height: clamp(28px, 5vw, 36px);
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   display: flex;
@@ -116,10 +167,18 @@
   font-size: 12px;
   font-weight: 700;
   color: #fff;
+  flex-shrink: 0;
 }
 
 .user-name {
-  font-size: 14px;
+  font-size: clamp(12px, 2.5vw, 15px);
   font-weight: 500;
   color: var(--text-primary);
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .user-name {
+    display: block;
+  }
 }
